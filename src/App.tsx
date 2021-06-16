@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import Error from "./components/error";
+import Dialer from "./components/dialer";
 
 function App() {
+  const src =
+    "https://api2.totalvoice.com.br/w3/phone.php?key=8d8ab641751e858dea5ca8ceaf23d7b9&tipo=hidden";
+  const contact = {
+    name: "Luiz Mauro",
+    phone: "12996020481",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Error>
+        <Dialer src={src} contact={contact} />
+      </Error>
+    </>
   );
 }
 
