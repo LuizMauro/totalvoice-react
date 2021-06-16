@@ -72,6 +72,12 @@ const Phone = styled(({ className, src, number, startCalling, children }) => {
     sendDtmf: (dtmf) => {
       postMessage({ message: "enviaDTMF", dtmf });
     },
+    recstart: () => {
+      postMessage({ message: "recStart" });
+    },
+    recstop: () => {
+      postMessage({ message: "recStop" });
+    },
   };
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import React from "react";
 
+import WebPhone from "./Modificado.js";
 import Error from "./components/error";
 import Dialer from "./components/dialer";
 
@@ -16,6 +17,7 @@ function App() {
       <Error>
         <Dialer src={src} contact={contact} />
       </Error>
+      {/* <WebPhone /> */}
     </>
   );
 }

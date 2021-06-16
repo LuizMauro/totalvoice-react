@@ -36,8 +36,16 @@ const CallKey = ({ isHolding, onClick }) => (
 );
 
 const Controls = styled(({ className, number, onToggleKeypad }) => {
-  const { isInCall, muteCall, startCall, endCall, disconnect, connect } =
-    useContext(Context);
+  const {
+    isInCall,
+    muteCall,
+    startCall,
+    endCall,
+    disconnect,
+    connect,
+    recstart,
+    recStop,
+  } = useContext(Context);
   const [isMuted, setIsMuted] = useState(false);
 
   const toggleMute = () => {
@@ -66,6 +74,10 @@ const Controls = styled(({ className, number, onToggleKeypad }) => {
         </div>
       )}
       <CallKey isHolding={isHolding} onClick={toggleCall} />
+
+      <button onClick={recstart}>Iniciar Gravação</button>
+      <button onClick={recStop}>Parar Gravação</button>
+
       <button onClick={disconnect}>Desconectar</button>
       <button onClick={connect}>Conectar</button>
     </div>
